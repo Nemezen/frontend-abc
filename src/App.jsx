@@ -21,6 +21,8 @@ function App() {
   const [user, setUser] = useState(null);
   
   const [isAdmin, setIsAdmin] = useState(false);
+
+  //Efecto que comprueba si somos administradores mediante un booleano que retorna el backend
   useEffect(() => {
     const checkRole = async () => {
       const response = await isAdminBool();

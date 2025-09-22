@@ -16,8 +16,6 @@ const BusquedaReserva = () => {
         setLoading(true);
         const reservaData = await buscarReservaPorFolio(folio);
         const reservaId = reservaData.id
-        console.log(reservaId);
-        
         const historialData = await obtenerHistorialReserva(reservaId);
         
         setReserva(reservaData);
@@ -44,17 +42,16 @@ const BusquedaReserva = () => {
   if (!reserva) {
     return <Alert variant="warning">No se encontró la reserva.</Alert>;
   }
-
   return (
     <Container>
       <Row>
         <Col md={8}>
-          <Card className="mb-4">
+          <Card className="mb-4 clasexd">
             <Card.Header>Reserva: {reserva.numeroFolio}</Card.Header>
             <Card.Body>
               <Card.Title>{reserva.nombreEspacio}</Card.Title>
               <Card.Text>
-                <strong>Usuario:</strong> {reserva.nombreUsuario}<br />
+                <strong>Usuario:</strong> {reserva.nombreSolicitante}<br />
                 <strong>Fecha y Hora de Inicio:</strong> {new Date(reserva.fechaHoraInicio).toLocaleString()}<br />
                 <strong>Fecha y Hora de Fin:</strong> {new Date(reserva.fechaHoraFin).toLocaleString()}<br />
                 <strong>Estado:</strong> {reserva.estado}

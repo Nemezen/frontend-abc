@@ -29,8 +29,6 @@ const ReservaForm = () => {
   const handleBack = () => setStep(prev => Math.max(prev - 1, 1));
 
   const updateFormData = (field, value) => {
-    console.log('Updating form data:', { field, value });
-    
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 

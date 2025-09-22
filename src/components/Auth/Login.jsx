@@ -31,8 +31,6 @@ const Login = ({ onLogin }) => {
     setError("");
 
     try {
-      console.log(credentials);
-      
       const response = await login(credentials);
       localStorage.setItem("authToken", JSON.stringify(response.data));
 
